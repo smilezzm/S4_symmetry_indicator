@@ -2,7 +2,7 @@
 This is the data repository for the article “Equivalence between the Axion Invariant and the S4 Symmetry Indicator”.
 
 # Explanation
-[ebr_raw_data8133.txt](./ebr_raw_data8133.txt] is the symmetry data for elementary band representation, 
+[ebr_raw_data8133.txt](./ebr_raw_data8133.txt) is the symmetry data for elementary band representation, 
 extracted from open-source site 
 [https://cryst.ehu.es/cgi-bin/cryst/programs/mbandrep.pl](https://cryst.ehu.es/cgi-bin/cryst/programs/mbandrep.pl). 
 
