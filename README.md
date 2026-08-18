@@ -14,6 +14,7 @@ extracted from open-source site
 [tight_binding_S4.ipynb](./tight_binding_S4.ipynb) solves the tight-binding model. 
 
 # Citation
+```
 @misc{zhang2026equivalenceaxioninvariants4,
       title={Equivalence between the Axion Invariant and the $S_4$ Symmetry Indicator}, 
       author={Mengyao Zhang},
@@ -23,3 +24,4 @@ extracted from open-source site
       primaryClass={cond-mat.mes-hall},
       url={https://arxiv.org/abs/2607.05719}, 
 }
+```
