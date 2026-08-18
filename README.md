@@ -1,5 +1,5 @@
 # Introduction
-This is the data repository for the article “Equivalence between the Axion Invariant and the S4 Symmetry Indicator”.
+This is the data repository for the article [“Equivalence between the Axion Invariant and the S4 Symmetry Indicator”](https://arxiv.org/abs/2607.05719).
 
 # Explanation
 [ebr_raw_data8133.txt](./ebr_raw_data8133.txt) is the symmetry data for elementary band representation, 
@@ -12,3 +12,14 @@ extracted from open-source site
 [S4_su2_stabilized_decomposition.ipynb](./S4_su2_stabilized_decomposition.ipynb) proves the availability to reduce U(2) blocks to SU(2) blocks.
 
 [tight_binding_S4.ipynb](./tight_binding_S4.ipynb) solves the tight-binding model. 
+
+# Citation
+@misc{zhang2026equivalenceaxioninvariants4,
+      title={Equivalence between the Axion Invariant and the $S_4$ Symmetry Indicator}, 
+      author={Mengyao Zhang},
+      year={2026},
+      eprint={2607.05719},
+      archivePrefix={arXiv},
+      primaryClass={cond-mat.mes-hall},
+      url={https://arxiv.org/abs/2607.05719}, 
+}
