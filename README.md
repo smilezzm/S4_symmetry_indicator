@@ -3,7 +3,7 @@ This is the data repository for the article [“Equivalence between the Axion In
 
 # Explanation
 
-[tight_binding_S4.ipynb](./tight_binding_S4.ipynb) contains numerical calculation of the toy model, [s4_model.py](./s4_model.py) being its tool package.
+[S4_tight_binding_model.ipynb](./S4_tight_binding_model.ipynb) contains numerical calculation of the toy model, [s4_model.py](./s4_model.py) being its tool package.
 
 [ebr_raw_data8133.txt](./ebr_raw_data8133.txt) is the symmetry data for elementary band representation, 
 extracted from open-source site 
