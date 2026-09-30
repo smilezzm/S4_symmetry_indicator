@@ -1,5 +1,5 @@
-# This is copied from band_decomposition.ipynb to run in ubuntu.
-# so that PyNormaliz could be applied.
+# Compute the Hilbert basis with PyNormaliz in the Normaliz environment.
+# R3/R4 and X3/X4 have C2 eigenvalues -i/+i; the scaled R coefficients are +2/-2.
 
 from pathlib import Path
 
@@ -26,19 +26,19 @@ CR[7, 4:8] = 1
 CR[7, 16] = CR[7, 17] = -1
 
 # for z_{4S} indicator
-P_1 = np.array([0,0,0,0,1.5,-0.5,-1.5,0.5,0,0,0,0,1.5,-0.5,-1.5,0.5,-1.0,1.0,0,0])
+P_1 = np.array([0,0,0,0,1.5,-0.5,-1.5,0.5,0,0,0,0,1.5,-0.5,-1.5,0.5,1.0,-1.0,0,0])
 # for \delta_{2S} indicator
 P_2 = np.array([-1,0,1,0,1,0,-1,0,-1,0,1,0,1,0,-1,0,0,0,0,0], dtype=int)
 P_1 = (2 * P_1).astype(int)
 
 def monoid_hilbert_basis(CR, P1, P2, mods=(8, 2)):
-    """Hilbert basis of {B >= 0 : CR·B = 0, P1·B ≡ 0 (mod 4), P2·B ≡ 0 (mod 2)}."""
+    """Hilbert basis of {B >= 0 : CR·B = 0, P1·B ≡ 0 (mod 8), P2·B ≡ 0 (mod 2)}."""
     CR = np.atleast_2d(np.asarray(CR, dtype=int))
     n  = CR.shape[1]
 
     equations    = CR.tolist()                              # CR·B = 0
     inequalities = np.eye(n, dtype=int).tolist()            # B_i >= 0  (makes the cone pointed)
-    congruences  = [list(map(int, P1)) + [int(mods[0])],    # P1·B ≡ 0 (mod 4)
+    congruences  = [list(map(int, P1)) + [int(mods[0])],    # P1·B ≡ 0 (mod 8)
                     list(map(int, P2)) + [int(mods[1])]]    # P2·B ≡ 0 (mod 2)
 
     C = Cone(equations=equations,
@@ -48,6 +48,8 @@ def monoid_hilbert_basis(CR, P1, P2, mods=(8, 2)):
     return H
 
 H = monoid_hilbert_basis(CR, P_1, P_2)
+assert np.all(H >= 0) and np.all(H @ CR.T == 0)
+assert np.all(H @ P_1 % 8 == 0) and np.all(H @ P_2 % 2 == 0)
 print("Hilbert basis: ", H.shape[0], "generators, dim", H.shape[1])
 
 out_path = Path(__file__).resolve().parent / "hilbert_basis.npy"
